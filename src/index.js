@@ -47,3 +47,13 @@ function displayJobs(jobs) {
     viewDetailsButton.addEventListener("click", () => showJobDetails(job));
   });
 }
+
+// Display job details
+
+// Toggle dark/light mode
+toggleThemeButton.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+});
+
+// Initialize
+fetchJobs();
