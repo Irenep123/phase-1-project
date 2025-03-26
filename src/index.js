@@ -3,3 +3,4 @@ const apiUrl =
 const jobListingsContainer = document.getElementById("job-listings");
 const jobDetailsContainer = document.getElementById("job-details");
 const searchBar = document.getElementById("search-bar");
+const toggleThemeButton = document.getElementById("toggle-theme");
