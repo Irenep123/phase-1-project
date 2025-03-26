@@ -26,3 +26,24 @@ async function fetchJobs() {
     console.error("Error fetching job data:", error);
   }
 }
+
+// to Display job listings
+
+function displayJobs(jobs) {
+  jobListingsContainer.innerHTML = "";
+  jobs.forEach((job) => {
+    const jobElement = document.createElement("div");
+    jobElement.classList.add("job-item");
+    jobElement.innerHTML = `
+            <h3>${job.jobTitle}</h3>
+            <p><strong>Company:</strong> ${job.companyName}</p>
+            <p><strong>Location:</strong> ${job.jobGeo}</p>
+            <button class="view-details" data-job-id="${job.id}">View Details</button>
+        `;
+    jobListingsContainer.appendChild(jobElement);
+
+    // Add event listener for "View Details" button
+    const viewDetailsButton = jobElement.querySelector(".view-details");
+    viewDetailsButton.addEventListener("click", () => showJobDetails(job));
+  });
+}
