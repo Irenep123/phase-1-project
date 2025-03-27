@@ -62,6 +62,20 @@ function showJobDetails(job) {
   jobDetailsContainer.style.display = "block";
 }
 
+// Search functionality
+searchBar.addEventListener("input", (e) => {
+  const query = e.target.value.toLowerCase();
+  const jobItems = document.querySelectorAll(".job-item");
+  jobItems.forEach((item) => {
+    const title = item.querySelector("h3").textContent.toLowerCase();
+    if (title.includes(query)) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  });
+});
+
 // Toggle dark/light mode
 toggleThemeButton.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
