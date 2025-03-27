@@ -1,1 +1,1 @@
-link to the website on netlify - jobads.netlify.app
+link to the website on netlify - https://jobads.netlify.app/
