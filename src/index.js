@@ -48,7 +48,19 @@ function displayJobs(jobs) {
   });
 }
 
-// Display job details
+// to  Display job details
+
+function showJobDetails(job) {
+  jobDetailsContainer.innerHTML = `
+        <h3>${job.jobTitle}</h3>
+        <p><strong>Company:</strong> ${job.companyName}</p>
+        <p><strong>Location:</strong> ${job.jobGeo}</p>
+        <p><strong>Job Type:</strong> ${job.jobType}</p>
+        <p><strong>Description:</strong> ${job.jobDescription}</p>
+        <a href="${job.url}" target="_blank">Apply Now</a>
+    `;
+  jobDetailsContainer.style.display = "block";
+}
 
 // Toggle dark/light mode
 toggleThemeButton.addEventListener("click", () => {
