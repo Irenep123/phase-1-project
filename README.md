@@ -1,1 +1,1 @@
-link to the project recording
+link to the website on netlify - jobads.netlify.app
