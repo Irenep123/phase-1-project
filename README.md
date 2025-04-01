@@ -2,7 +2,7 @@
 In order to run the website you need to run the following command in the terminal <br>
 json-server --watch db.json
 
-
+link to the website on github pages -https://irenep123.github.io/phase-1-project.io/ <br>
 link to the website on netlify - https://jobads.netlify.app/ <br>
 link to the project description video - https://drive.google.com/file/d/1lB86qQAomUVHWzAWZpuxUBBWWpekAz-G/view?usp=sharing <br>
 
