@@ -1,6 +1,6 @@
 
-In order to run the website you need to run the following command in the terminal <br>
-json-server --watch db.json
+**In order to run the website you need to run the following command in the terminal <br>
+json-server --watch db.json**<br>
 
 link to the website on github pages -https://irenep123.github.io/phase-1-project.io/ <br>
 link to the website on netlify - https://jobads.netlify.app/ <br>
