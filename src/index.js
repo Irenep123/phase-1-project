@@ -1,78 +1,19 @@
-const jobData = {
-  jobs: [
-    {
-      id: 114143,
-      url: "https://jobicy.com/jobs/114143-director-of-product-marketing",
-      jobTitle: "Sr. Content Marketing Manager",
-      companyName: "ActiveCampaign",
-      jobType: "full-time",
-      jobGeo: "USA",
-      jobExcerpt:
-        "As a Senior Content Marketing Manager, you’ll create content that drives business across the entire customer lifecycle.",
-      pubDate: "2025-03-23 04:41:56",
-    },
-    {
-      id: 111598,
-      url: "https://jobicy.com/jobs/111598-growth-manager-3",
-      jobTitle: "Growth Manager",
-      companyName: "Awesome Motive",
-      jobType: "full-time",
-      jobGeo: "Anywhere",
-      jobExcerpt:
-        "We are Awesome Motive, the company behind popular web apps and business tools.",
-      pubDate: "2025-03-19 05:15:32",
-    },
-    {
-      id: 116374,
-      url: "https://jobicy.com/jobs/116374-senior-content-marketing-manager-2",
-      jobTitle: "Senior Content Marketing Manager",
-      companyName: "Postman",
-      jobType: "full-time",
-      jobGeo: "USA",
-      jobExcerpt:
-        "We’re seeking a creative strategist who’s versed in every aspect of a content marketing ecosystem.",
-      pubDate: "2025-03-18 16:13:07",
-    },
-    {
-      id: 116301,
-      url: "https://jobicy.com/jobs/116301-senior-digital-acquisition-strategist",
-      jobTitle: "Senior Digital Acquisition Strategist",
-      companyName: "ServiceNow",
-      jobType: "full-time",
-      jobGeo: "Canada, USA",
-      jobExcerpt:
-        "We are seeking a dynamic Senior Digital Acquisition Strategist to join our global digital marketing team.",
-      pubDate: "2025-03-15 02:39:37",
-    },
-    {
-      id: 116055,
-      url: "https://jobicy.com/jobs/116055-marketing-assistant",
-      jobTitle: "Marketing Assistant",
-      companyName: "Scorpion",
-      jobType: "full-time",
-      jobGeo: "USA",
-      jobExcerpt:
-        "Scorpion is the leading provider of technology and services helping local businesses thrive.",
-      pubDate: "2025-03-05 19:21:30",
-    },
-    {
-      id: 111984,
-      url: "https://jobicy.com/jobs/111984-manager-digital-marketing",
-      jobTitle: "Manager, Digital Marketing",
-      companyName: "CrossFit",
-      jobType: "full-time",
-      jobGeo: "Anywhere",
-      jobExcerpt:
-        "CrossFit is looking to hire a Manager, Digital Marketing to join our Marketing team.",
-      pubDate: "2025-03-04 03:56:21",
-    },
-  ],
-};
-
+const apiUrl = "http://localhost:3000/jobs"; // URL for json-server
 const jobListingsContainer = document.getElementById("job-listings");
 const jobDetailsContainer = document.getElementById("job-details");
 const searchBar = document.getElementById("search-bar");
 const toggleThemeButton = document.getElementById("toggle-theme");
+
+// Fetch job data from the local json-server
+async function fetchJobs() {
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    displayJobs(data); // Call function to display jobs once data is fetched
+  } catch (error) {
+    console.error("Error fetching job data:", error);
+  }
+}
 
 // Function to display the jobs
 function displayJobs(jobs) {
@@ -130,5 +71,5 @@ toggleThemeButton.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
 });
 
-// Initialize by displaying all jobs
-displayJobs(jobData.jobs);
+// Initialize by fetching job data
+fetchJobs();
